@@ -11,7 +11,7 @@
  * - @string1 > @string2: Return a negative number
  * - @string1 < @string2: Return a positive number
  */
-int32_t Q_strcmp(uint8_t* string1, uint8_t* string2) {
+int32_t Q_strcmp(const char* string1, const char* string2) {
     for(; *string1 == *string2; ++string1, ++string2) {
         if (!*string1) {
             // If we reach the null terminator, then the strings are the same
@@ -42,7 +42,7 @@ int32_t Q_strcmp(uint8_t* string1, uint8_t* string2) {
  * - success: Numerical value of the @num
  * - fail: Send an error and display error on screen
  */
-int32_t Q_atoi(uint8_t* num) {
+int32_t Q_atoi(const char* num) {
     int32_t sign = 1; // Sign for the final number
     int32_t num_value = 0; // Numerical value of param num
 
@@ -83,7 +83,7 @@ int32_t Q_atoi(uint8_t* num) {
  * Returns:
  * - None
  */
-void Q_strcpy(uint8_t* destination, uint8_t* source) {
+void Q_strcpy(char* destination, const char* source) {
     while(*source) {
         *destination++ = *source++;
     }
@@ -96,7 +96,7 @@ void Q_strcpy(uint8_t* destination, uint8_t* source) {
  * Returns:
  * - None
  */
-void Q_strncpy(uint8_t* destination, uint8_t* source, int32_t count) {
+void Q_strncpy(char* destination, const char* source, int32_t count) {
     if (count < 0) {
         return;
     }
@@ -121,7 +121,7 @@ void Q_strncpy(uint8_t* destination, uint8_t* source, int32_t count) {
  * Returns:
  * - success: Length of @string
  */
-int32_t Q_strlen(uint8_t* string) {
+int32_t Q_strlen(const char* string) {
     int32_t length = 0;
     for(; *string; ++string, length++);
 

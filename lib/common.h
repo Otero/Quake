@@ -10,6 +10,6 @@
  */
 #define MAX_NUM_ARGVS 50
 
-int32_t COM_CheckParam(int32_t, uint8_t**, uint8_t* param);
+int32_t COM_CheckParam(int32_t, char**, char* param);
 
 #endif
